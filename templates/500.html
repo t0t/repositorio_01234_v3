@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-[70vh] flex items-center justify-center">
+    <div class="brutal-border bg-black p-8 max-w-2xl w-full text-center relative overflow-hidden">
+        <!-- Glitch Background -->
+        <div class="absolute inset-0 bg-red-500 opacity-10 animate-pulse"></div>
+        
+        <!-- Error Message -->
+        <h1 class="text-8xl font-press-start mb-8 animate-glitch text-red-500">
+            {{ glitch_text("500") }}
+        </h1>
+        
+        <div class="space-y-6 relative">
+            <p class="text-2xl font-vt323">
+                {{ glitch_text("CRITICAL_ERROR: SYSTEM_MALFUNCTION") }}
+            </p>
+            
+            <p class="font-vt323 text-gray-400">
+                {{ glitch_text("The tropical matrix has encountered an unexpected glitch in the system.") }}
+            </p>
+            
+            <!-- Glitch Art -->
+            <div class="my-8 grid grid-cols-6 gap-1">
+                {% for i in range(12) %}
+                <div class="h-8 bg-red-500 bg-opacity-20 animate-pulse" 
+                     style="animation-delay: {{ i * 0.1 }}s"></div>
+                {% endfor %}
+            </div>
+            
+            <!-- Error Details -->
+            <div class="font-vt323 text-sm text-gray-400 space-y-2">
+                <p>{{ glitch_text("ERROR_CODE: TROPICAL_OVERFLOW") }}</p>
+                <p>{{ glitch_text("STATUS: CRITICAL") }}</p>
+                <p>{{ glitch_text("ATTEMPTING_SYSTEM_RECOVERY...") }}</p>
+            </div>
+            
+            <!-- Navigation Options -->
+            <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+                <a href="{{ url_for('index') }}" 
+                   class="brutal-border brutal-hover bg-red-500 text-black px-6 py-3 font-vt323 transition-all duration-300">
+                    {{ glitch_text("EMERGENCY_RETURN") }}
+                </a>
+                <button onclick="window.location.reload()" 
+                        class="brutal-border brutal-hover bg-black px-6 py-3 font-vt323 transition-all duration-300">
+                    {{ glitch_text("RETRY_SYSTEM") }}
+                </button>
+            </div>
+        </div>
+        
+        <!-- Random Glitch Elements -->
+        <div class="absolute top-0 left-0 w-full h-2 bg-red-500 animate-glitch"></div>
+        <div class="absolute bottom-0 right-0 w-full h-2 bg-red-500 animate-glitch" 
+             style="animation-delay: 0.5s"></div>
+    </div>
+</div>
+
+<!-- Glitch Animation Script -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.querySelector('.brutal-border');
+    const glitchText = document.querySelectorAll('.font-vt323');
+    
+    // Random glitch effect
+    setInterval(() => {
+        if (Math.random() > 0.9) {
+            container.style.transform = `translate(${Math.random() * 10 - 5}px, ${Math.random() * 10 - 5}px)`;
+            container.style.filter = `hue-rotate(${Math.random() * 360}deg)`;
+            
+            glitchText.forEach(text => {
+                text.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+            });
+            
+            setTimeout(() => {
+                container.style.transform = 'none';
+                container.style.filter = 'none';
+                glitchText.forEach(text => {
+                    text.style.transform = 'none';
+                });
+            }, 100);
+        }
+    }, 1000);
+});
+</script>
+{% endblock %}

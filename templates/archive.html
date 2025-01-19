@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+
+{% block title %}BRUTAL_DATABASE - ARCHIVE{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .archive-container {
+        padding: 2rem;
+        background: var(--color-dark);
+    }
+
+    .search-section {
+        margin-bottom: 3rem;
+        padding: 2rem;
+        border: 3px solid var(--color-secondary);
+        background: rgba(0,0,0,0.3);
+    }
+
+    .search-input {
+        width: 100%;
+        padding: 1rem;
+        font-family: 'Space Mono', monospace;
+        background: transparent;
+        border: 2px solid var(--color-primary);
+        color: #fff;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .search-input:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 15px rgba(255, 230, 109, 0.3);
+    }
+
+    .filter-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .filter-tag {
+        padding: 0.5rem 1rem;
+        background: var(--color-primary);
+        color: var(--color-dark);
+        border: none;
+        cursor: pointer;
+        font-family: 'Press Start 2P', cursive;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
+    }
+
+    .filter-tag:hover,
+    .filter-tag.active {
+        background: var(--color-accent);
+        transform: translateY(-2px);
+    }
+
+    .archive-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 2rem;
+    }
+
+    .archive-item {
+        padding: 1.5rem;
+        border: 2px solid var(--color-primary);
+        background: rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+
+    .archive-item:hover {
+        border-color: var(--color-accent);
+        transform: scale(1.02);
+        background: rgba(0,0,0,0.4);
+    }
+
+    .archive-image {
+        margin-bottom: 1rem;
+    }
+
+    .archive-image img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .archive-title {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1rem;
+        color: var(--color-accent);
+        margin-bottom: 1rem;
+    }
+
+    .archive-meta {
+        font-size: 0.8rem;
+        color: var(--color-secondary);
+        border-top: 1px dashed var(--color-secondary);
+        padding-top: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    .archive-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .archive-tag {
+        padding: 0.2rem 0.5rem;
+        background: var(--color-secondary);
+        color: var(--color-dark);
+        font-size: 0.7rem;
+        border-radius: 10px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="archive-container">
+    <section class="search-section">
+        <input type="text" class="search-input" placeholder="BUSCAR EN EL ARCHIVO..." />
+        <div class="filter-tags">
+            <button class="filter-tag active" data-tag="all">TODOS</button>
+            {% for tag in all_tags %}
+            <button class="filter-tag" data-tag="{{ tag }}">{{ tag|upper }}</button>
+            {% endfor %}
+        </div>
+    </section>
+
+    <div class="archive-grid">
+        {% for item in items %}
+        <article class="archive-item" data-tags="{{ item.tags|join(' ') }}">
+            {% if item.media %}
+            <div class="archive-image">
+                <img src="{{ item.media }}" alt="{{ item.type }}" loading="lazy">
+            </div>
+            {% endif %}
+            <h3 class="archive-title">{{ item.type }}</h3>
+            <p>{{ item.content }}</p>
+            <div class="archive-meta">
+                <div class="archive-tags">
+                    {% for tag in item.tags %}
+                    <span class="archive-tag">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // Función de búsqueda
+    function searchItems(query) {
+        const items = document.querySelectorAll('.archive-item');
+        const searchQuery = query.toLowerCase();
+
+        items.forEach(item => {
+            const title = item.querySelector('.archive-title').textContent.toLowerCase();
+            const content = item.querySelector('p').textContent.toLowerCase();
+            const tags = item.dataset.tags.toLowerCase();
+
+            if (title.includes(searchQuery) || content.includes(searchQuery) || tags.includes(searchQuery)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+
+    // Función de filtrado por tags
+    function filterByTag(tag) {
+        const items = document.querySelectorAll('.archive-item');
+        
+        items.forEach(item => {
+            const itemTags = item.dataset.tags.split(' ');
+            if (tag === 'all' || itemTags.includes(tag)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Actualizar estado activo de los botones
+        document.querySelectorAll('.filter-tag').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.tag === tag);
+        });
+    }
+
+    // Event listeners
+    document.querySelector('.search-input').addEventListener('input', function(e) {
+        searchItems(e.target.value);
+    });
+
+    document.querySelectorAll('.filter-tag').forEach(tag => {
+        tag.addEventListener('click', function() {
+            filterByTag(this.dataset.tag);
+        });
+    });
+</script>
+{% endblock %}

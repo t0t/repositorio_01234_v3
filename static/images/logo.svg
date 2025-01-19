@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="500" version="1.1" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+ <g fill="none" stroke="#fff" stroke-width="20">
+  <path d="M250 100 L150 200 L350 200 Z"/>
+  <path d="M150 200 L150 300 L250 300 Z"/>
+  <path d="M250 300 L350 300 L350 200 Z"/>
+  <circle cx="250" cy="250" r="200"/>
+  <text x="50" y="200" fill="#fff" font-family="Arial" font-size="100">0</text>
+  <text x="225" y="150" fill="#fff" font-family="Arial" font-size="100">3</text>
+  <text x="400" y="200" fill="#fff" font-family="Arial" font-size="100">4</text>
+  <text x="225" y="350" fill="#fff" font-family="Arial" font-size="100">2</text>
+  <text x="225" y="250" fill="#fff" font-family="Arial" font-size="100">1</text>
+ </g>
+</svg>

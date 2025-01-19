@@ -1,0 +1,235 @@
+{% extends "base.html" %}
+
+{% block title %}BRUTAL_DATABASE - VOID{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .void-container {
+        position: relative;
+        min-height: 100vh;
+        background: #000;
+        overflow: hidden;
+    }
+
+    .void-content {
+        position: relative;
+        z-index: 2;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .void-title {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 3rem;
+        color: var(--color-primary);
+        margin-bottom: 2rem;
+        text-shadow: 4px 4px var(--color-secondary);
+        animation: voidPulse 4s infinite;
+    }
+
+    @keyframes voidPulse {
+        0% { text-shadow: 4px 4px var(--color-secondary); }
+        50% { text-shadow: -4px -4px var(--color-accent); }
+        100% { text-shadow: 4px 4px var(--color-secondary); }
+    }
+
+    .void-message {
+        font-size: 1.5rem;
+        color: var(--color-accent);
+        margin-bottom: 3rem;
+        opacity: 0;
+        animation: fadeInOut 8s infinite;
+    }
+
+    @keyframes fadeInOut {
+        0% { opacity: 0; transform: translateY(20px); }
+        10% { opacity: 1; transform: translateY(0); }
+        90% { opacity: 1; transform: translateY(0); }
+        100% { opacity: 0; transform: translateY(-20px); }
+    }
+
+    .void-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .void-image {
+        position: relative;
+        height: 300px;
+        border: 3px solid var(--color-primary);
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .void-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+        filter: grayscale(50%) brightness(0.7);
+    }
+
+    .void-image:hover img {
+        transform: scale(1.1);
+        filter: grayscale(0%) brightness(1);
+    }
+
+    .void-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, var(--color-primary), transparent);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .void-image:hover::before {
+        opacity: 0.3;
+    }
+
+    #particles-js {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .glitch-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.1);
+        pointer-events: none;
+        animation: glitchEffect 8s infinite;
+    }
+
+    @keyframes glitchEffect {
+        0% { transform: translate(0) }
+        1% { transform: translate(-2px, 2px) }
+        2% { transform: translate(2px, -2px) }
+        3% { transform: translate(-2px, -2px) }
+        4% { transform: translate(2px, 2px) }
+        5% { transform: translate(0) }
+        100% { transform: translate(0) }
+    }
+
+    .void-quotes {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        color: var(--color-accent);
+        font-family: 'Space Mono', monospace;
+        opacity: 0;
+        transform: translateY(20px);
+        animation: quotesFade 10s infinite;
+    }
+
+    @keyframes quotesFade {
+        0%, 100% { opacity: 0; transform: translateY(20px); }
+        10%, 90% { opacity: 1; transform: translateY(0); }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="void-container">
+    <div id="particles-js"></div>
+    <div class="glitch-overlay"></div>
+    
+    <div class="void-content">
+        <h1 class="void-title">VOID</h1>
+        <p class="void-message" id="void-message">Entrando al void...</p>
+        
+        <div class="void-gallery">
+            {% for image in images %}
+            <div class="void-image">
+                <img src="{{ image }}" alt="Void Image" loading="lazy">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    // Configuración de particles.js
+    particlesJS('particles-js', {
+        particles: {
+            number: { value: 80, density: { enable: true, value_area: 800 } },
+            color: { value: '#ffe66d' },
+            shape: { type: 'circle' },
+            opacity: {
+                value: 0.5,
+                random: true,
+                animation: { enable: true, speed: 1, minimumValue: 0.1, sync: false }
+            },
+            size: {
+                value: 3,
+                random: true,
+                animation: { enable: true, speed: 4, minimumValue: 0.3, sync: false }
+            },
+            line_linked: {
+                enable: true,
+                distance: 150,
+                color: '#ffe66d',
+                opacity: 0.4,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 2,
+                direction: 'none',
+                random: true,
+                straight: false,
+                out_mode: 'out',
+                bounce: false
+            }
+        },
+        interactivity: {
+            detect_on: 'canvas',
+            events: {
+                onhover: { enable: true, mode: 'repulse' },
+                onclick: { enable: true, mode: 'push' },
+                resize: true
+            },
+            modes: {
+                repulse: { distance: 100, duration: 0.4 },
+                push: { particles_nb: 4 }
+            }
+        },
+        retina_detect: true
+    });
+
+    // Mensajes aleatorios para el void
+    const voidMessages = [
+        "En el vacío encontramos significado...",
+        "Los datos fluyen en el void...",
+        "La información es eterna...",
+        "El código es infinito...",
+        "Bits perdidos en el tiempo...",
+        "La matriz nos observa...",
+        "Fragmentos de realidad digital..."
+    ];
+
+    function updateVoidMessage() {
+        const messageElement = document.getElementById('void-message');
+        const randomMessage = voidMessages[Math.floor(Math.random() * voidMessages.length)];
+        messageElement.textContent = randomMessage;
+    }
+
+    // Actualizar mensaje cada 8 segundos
+    setInterval(updateVoidMessage, 8000);
+    updateVoidMessage(); // Mostrar primer mensaje inmediatamente
+</script>
+{% endblock %}

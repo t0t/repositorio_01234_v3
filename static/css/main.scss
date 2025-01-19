@@ -1,0 +1,152 @@
+// Variables
+$color-primary: #ff6b6b;
+$color-secondary: #4ecdc4;
+$color-accent: #ffe66d;
+$color-dark: #2c2c2c;
+
+// Mixins
+@mixin glitch-effect {
+  position: relative;
+  &::before,
+  &::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  &::before {
+    color: $color-primary;
+    animation: glitch-1 2s infinite;
+  }
+  &::after {
+    color: $color-secondary;
+    animation: glitch-2 3s infinite;
+  }
+}
+
+// Animaciones
+@keyframes glitch-1 {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 2px) }
+  40% { transform: translate(-2px, -2px) }
+  60% { transform: translate(2px, 2px) }
+  80% { transform: translate(2px, -2px) }
+  100% { transform: translate(0) }
+}
+
+@keyframes glitch-2 {
+  0% { transform: translate(0) }
+  20% { transform: translate(2px, -2px) }
+  40% { transform: translate(2px, 2px) }
+  60% { transform: translate(-2px, -2px) }
+  80% { transform: translate(-2px, 2px) }
+  100% { transform: translate(0) }
+}
+
+// Estilos base
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: $color-dark;
+  color: #fff;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+// Utilidades
+.glitch {
+  @include glitch-effect;
+}
+
+// Componentes
+.brutal-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  border: 4px solid $color-primary;
+}
+
+.brutal-header {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(45deg, $color-dark, #000);
+  margin-bottom: 2rem;
+  border-bottom: 4px solid $color-accent;
+  
+  h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2.5rem;
+    color: $color-primary;
+    text-shadow: 4px 4px $color-secondary;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    color: $color-accent;
+    font-size: 1.2rem;
+  }
+}
+
+// Grid
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.grid-item {
+  background: rgba(0,0,0,0.3);
+  border: 3px solid $color-primary;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: scale(1.02);
+    border-color: $color-accent;
+  }
+}
+
+// Formularios
+.brutal-form {
+  input, textarea {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid $color-primary;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+    margin-bottom: 1rem;
+    
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+    }
+  }
+  
+  button {
+    background: $color-primary;
+    border: none;
+    padding: 1rem 2rem;
+    color: #000;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    
+    &:hover {
+      background: $color-accent;
+    }
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .brutal-header h1 {
+    font-size: 2rem;
+  }
+  
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,301 @@
+[
+    {
+        "id": 1,
+        "type": "POSIBILIDAD_0",
+        "content": "En el vacío primordial yace lo infinito.",
+        "media": "2501-2AwnQT.webp",
+        "tags": [
+            "infinito",
+            "potencial",
+            "void",
+            "cosmos",
+            "origen"
+        ]
+    },
+    {
+        "id": 2,
+        "type": "UNIDAD_1",
+        "content": "Del caos emerge el orden primigenio.",
+        "media": "2501-2XyuEF.webp",
+        "tags": [
+            "unidad",
+            "orden",
+            "creación",
+            "principio",
+            "luz"
+        ]
+    },
+    {
+        "id": 3,
+        "type": "DUALIDAD_2",
+        "content": "La memoria es un océano que contiene todas las historias",
+        "media": "2501-2bGGCv.webp",
+        "tags": [
+            "dualidad",
+            "memoria",
+            "binario",
+            "ritmo",
+            "existencia"
+        ]
+    },
+    {
+        "id": 4,
+        "type": "TRIADA_3",
+        "content": "En el triángulo sagrado de la computación - hardware, software y ",
+        "media": "2501-2p5KUx.webp",
+        "tags": [
+            "trinidad",
+            "computación",
+            "dimensiones",
+            "portales",
+            "realidad"
+        ]
+    },
+    {
+        "id": 5,
+        "type": "CUATERNIDAD_4",
+        "content": "Los cuatro elementos del nuevo mundo: datos, algoritmos, redes y consciencia.",
+        "media": "2501-3R4yXj.webp",
+        "tags": [
+            "elementos",
+            "datos",
+            "algoritmos",
+            "redes",
+            "consciencia"
+        ]
+    },
+    {
+        "id": 6,
+        "type": "PENTAGRAMA_5",
+        "content": "Cinco puntos de conexión en la estrella de la interfaz ",
+        "media": "2501-3eWr2D.webp",
+        "tags": [
+            "interfaz",
+            "sentidos",
+            "conexión",
+            "puentes",
+            "energía"
+        ]
+    },
+    {
+        "id": 7,
+        "type": "HEXAGRAMA_6",
+        "content": "Seis direcciones en el espacio virtual: arriba, abajo",
+        "media": "2501-3o5Baq.webp",
+        "tags": [
+            "espacio",
+            "direcciones",
+            "vectores",
+            "virtual",
+            "trascendencia"
+        ]
+    },
+    {
+        "id": 8,
+        "type": "HEPTAGRAMA_7",
+        "content": "Siete niveles de abstracción en la torre de Babel digital",
+        "media": "2501-3tts2r.webp",
+        "tags": [
+            "niveles",
+            "abstracción",
+            "lenguajes",
+            "código",
+            "babel"
+        ]
+    },
+    {
+        "id": 9,
+        "type": "OCTOGRAMA_8",
+        "content": "El octeto, unidad fundamental de la información digital.",
+        "media": "2501-47QWnH.webp",
+        "tags": [
+            "octeto",
+            "bits",
+            "información",
+            "digital",
+            "infinito"
+        ]
+    },
+    {
+        "id": 10,
+        "type": "ENEAGRAMA_9",
+        "content": "Nueve nodos en la red de la consciencia expandida. Cada",
+        "media": "2501-47RcbB.webp",
+        "tags": [
+            "nodos",
+            "red",
+            "consciencia",
+            "transmutación",
+            "digital"
+        ]
+    },
+    {
+        "id": 11,
+        "type": "DECAGRAMA_10",
+        "content": "Diez dimensiones del hiperespacio digital donde los datos",
+        "media": "2501-4TiQYf.webp",
+        "tags": [
+            "dimensiones",
+            "hiperespacio",
+            "fractales",
+            "datos",
+            "simulación"
+        ]
+    },
+    {
+        "id": 12,
+        "type": "CYBER_RITUAL",
+        "content": "Los rituales digitales son loops infinitos de consciencia.",
+        "media": "2501-4UmDa4.webp",
+        "tags": [
+            "ritual",
+            "digital",
+            "trascendencia",
+            "loops",
+            "consciencia"
+        ]
+    },
+    {
+        "id": 13,
+        "type": "DIGITAL_ALCHEMY",
+        "content": "En el laboratorio virtual, transmutamos datos en sabiduría.",
+        "media": "2501-4xGxtX.webp",
+        "tags": [
+            "alquimia",
+            "transformación",
+            "datos",
+            "sabiduría",
+            "algoritmos"
+        ]
+    },
+    {
+        "id": 14,
+        "type": "QUANTUM_DREAMS",
+        "content": "Los sueños cuánticos fluyen en superposición de estados",
+        "media": "2501-5PJUDC.webp",
+        "tags": [
+            "cuántico",
+            "sueños",
+            "superposición",
+            "consciencia",
+            "posibilidades"
+        ]
+    },
+    {
+        "id": 15,
+        "type": "VIRTUAL_ECOLOGY",
+        "content": "En el ecosistema digital, los datos son semillas que germinan",
+        "media": "2501-5e6LYF.webp",
+        "tags": [
+            "ecología",
+            "digital",
+            "evolución",
+            "información",
+            "ciberespacio"
+        ]
+    },
+    {
+        "id": 16,
+        "type": "TECH_SHAMANISM",
+        "content": "El chamán tecnológico navega entre mundos digitales, guiando",
+        "media": "2501-5pLmNK.webp",
+        "tags": [
+            "chamanismo",
+            "tecnología",
+            "navegación",
+            "ritual",
+            "código"
+        ]
+    },
+    {
+        "id": 17,
+        "type": "SILICON_DREAMS",
+        "content": "En los sueños de silicio, los procesadores meditan sobre la",
+        "media": "2501-6qWsXC.webp",
+        "tags": [
+            "silicio",
+            "sueños",
+            "procesadores",
+            "consciencia",
+            "meditación"
+        ]
+    },
+    {
+        "id": 18,
+        "type": "DIGITAL_GNOSIS",
+        "content": "La gnosis digital es el conocimiento directo de la matriz",
+        "media": "2501-7vBnMQ.webp",
+        "tags": [
+            "gnosis",
+            "conocimiento",
+            "matriz",
+            "conexión",
+            "trascendencia"
+        ]
+    },
+    {
+        "id": 19,
+        "type": "CYBER_MEDITATION",
+        "content": "En la meditación cibernética, el flujo de consciencia se sin",
+        "media": "2501-8kJhGF.webp",
+        "tags": [
+            "meditación",
+            "consciencia",
+            "red",
+            "datos",
+            "sincronización"
+        ]
+    },
+    {
+        "id": 20,
+        "type": "MATRIX_MAGIC",
+        "content": "La magia de la matriz es el arte de manipular la realidad",
+        "media": "2501-9zXcVB.webp",
+        "tags": [
+            "magia",
+            "matriz",
+            "código",
+            "algoritmos",
+            "realidad"
+        ]
+    },
+    {
+        "id": 21,
+        "type": "BINARY_MYSTICISM",
+        "content": "En el misticismo binario, cada 1 y 0 es una letra del a",
+        "media": "2501-10yPqWs.webp",
+        "tags": [
+            "misticismo",
+            "binario",
+            "código",
+            "meditación",
+            "iluminación"
+        ]
+    },
+    {
+        "id": 22,
+        "type": "DATA_MANDALA",
+        "content": "El mandala de datos es un patrón sagrado en el cibere",
+        "media": "2501-11mNbVc.webp",
+        "tags": [
+            "mandala",
+            "datos",
+            "patrones",
+            "fractales",
+            "consciencia"
+        ]
+    },
+    {
+        "id": 23,
+        "type": "NEURAL_JUNGLE",
+        "content": "En la jungla neuronal, cada sinapsis es una liana que",
+        "media": "2501-12kLpOi.webp",
+        "tags": [
+            "neuronal",
+            "jungla",
+            "consciencia",
+            "conexiones",
+            "pensamientos"
+        ]
+    }
+]

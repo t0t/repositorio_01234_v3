@@ -1,0 +1,239 @@
+{% extends "base.html" %}
+
+{% block title %}BRUTAL_DATABASE - CONTACT{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .contact-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .contact-header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .contact-image {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 2rem;
+        border: 3px solid var(--color-primary);
+        overflow: hidden;
+    }
+
+    .contact-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .contact-image:hover img {
+        transform: scale(1.05);
+    }
+
+    .contact-title {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 2.5rem;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        text-shadow: 4px 4px var(--color-secondary);
+    }
+
+    .contact-subtitle {
+        color: var(--color-accent);
+        font-size: 1.2rem;
+        font-style: italic;
+        margin-bottom: 2rem;
+    }
+
+    .contact-form {
+        padding: 2rem;
+        border: 3px solid var(--color-secondary);
+        background: rgba(0,0,0,0.2);
+        margin-bottom: 3rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .form-label {
+        display: block;
+        font-family: 'Press Start 2P', cursive;
+        color: var(--color-accent);
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        padding: 1rem;
+        background: rgba(0,0,0,0.3);
+        border: 2px solid var(--color-primary);
+        color: #fff;
+        font-family: 'Space Mono', monospace;
+        transition: all 0.3s ease;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+        outline: none;
+        border-color: var(--color-accent);
+        box-shadow: 0 0 15px rgba(255, 230, 109, 0.3);
+    }
+
+    .form-textarea {
+        min-height: 150px;
+        resize: vertical;
+    }
+
+    .submit-button {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        background: var(--color-primary);
+        border: none;
+        color: var(--color-dark);
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .submit-button:hover {
+        background: var(--color-accent);
+        transform: translateY(-2px);
+    }
+
+    .alternate-contacts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 3rem;
+    }
+
+    .contact-method {
+        padding: 1.5rem;
+        border: 2px dashed var(--color-secondary);
+        background: rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+    }
+
+    .contact-method:hover {
+        border-style: solid;
+        transform: translateY(-5px);
+        background: rgba(0,0,0,0.5);
+    }
+
+    .method-title {
+        font-family: 'Press Start 2P', cursive;
+        color: var(--color-accent);
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .method-content {
+        font-family: 'Space Mono', monospace;
+        color: var(--color-primary);
+    }
+
+    .glitch-effect {
+        position: relative;
+        display: inline-block;
+    }
+
+    .glitch-effect::before,
+    .glitch-effect::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--color-dark);
+    }
+
+    .glitch-effect::before {
+        left: 2px;
+        text-shadow: -2px 0 var(--color-accent);
+        animation: glitch-1 2s infinite linear alternate-reverse;
+    }
+
+    .glitch-effect::after {
+        left: -2px;
+        text-shadow: 2px 0 var(--color-secondary);
+        animation: glitch-2 3s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-1 {
+        0% { clip-path: inset(20% 0 30% 0); }
+        20% { clip-path: inset(60% 0 10% 0); }
+        40% { clip-path: inset(40% 0 50% 0); }
+        60% { clip-path: inset(80% 0 5% 0); }
+        80% { clip-path: inset(10% 0 70% 0); }
+        100% { clip-path: inset(30% 0 20% 0); }
+    }
+
+    @keyframes glitch-2 {
+        0% { clip-path: inset(15% 0 35% 0); }
+        20% { clip-path: inset(55% 0 15% 0); }
+        40% { clip-path: inset(35% 0 45% 0); }
+        60% { clip-path: inset(75% 0 10% 0); }
+        80% { clip-path: inset(5% 0 75% 0); }
+        100% { clip-path: inset(25% 0 15% 0); }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="contact-container">
+    <header class="contact-header">
+        <h1 class="contact-title glitch-effect" data-text="CONTACT">CONTACT</h1>
+        <p class="contact-subtitle">Establece conexión con el void</p>
+        {% if image %}
+        <div class="contact-image">
+            <img src="{{ image }}" alt="Contact Image" loading="lazy">
+        </div>
+        {% endif %}
+    </header>
+
+    <form class="contact-form" action="/submit-contact" method="POST">
+        <div class="form-group">
+            <label class="form-label" for="name">IDENTIFICADOR</label>
+            <input type="text" id="name" name="name" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="email">CÓDIGO DE TRANSMISIÓN</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+        </div>
+
+        <div class="form-group">
+            <label class="form-label" for="message">MENSAJE AL VOID</label>
+            <textarea id="message" name="message" class="form-textarea" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">TRANSMITIR</button>
+    </form>
+
+    <div class="alternate-contacts">
+        <div class="contact-method">
+            <h3 class="method-title">SEÑALES DIGITALES</h3>
+            <p class="method-content">contact@brutaldatabase.com</p>
+        </div>
+
+        <div class="contact-method">
+            <h3 class="method-title">COORDENADAS FÍSICAS</h3>
+            <p class="method-content">Sector 2501, Void District</p>
+        </div>
+
+        <div class="contact-method">
+            <h3 class="method-title">FRECUENCIA TEMPORAL</h3>
+            <p class="method-content">24/7 en el void digital</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

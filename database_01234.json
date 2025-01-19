@@ -1,0 +1,323 @@
+{
+
+    "metadata": {
+        "version": "1.0.0",
+        "lastUpdate": "2025-01-18T20:15:38+01:00",
+        "author": {
+            "id": "01234",
+            "name": "Sergio Forés",
+            "email": "01234@gmail.com",
+            "website": "https://sergiofores.es",
+                "username": "admin_cosmic",
+                "profile": {
+                    "avatar": "/static/images/profiles/sergio_foreswebp",
+                    "bio": "Explorador de realidades digitales y creador de contenido futurista",
+                    "role": "admin",
+                    "specialties": [
+                        "IA",
+                        "Filosofía Digital",
+                        "Arte Generativo"
+                    ],
+                    "social_media": {
+                        "twitter": "@cuenta.01234",
+                        "github": "t0t"
+                    },
+                    "website": "https://sergiofores.es",
+            "image": "",
+            "slogans": [
+                "Cuento Creación",
+                "Narrativas Digitales",
+                "Metáforas Tecnológicas",
+                "Filosofía Cibernética",
+                "Realidades Virtuales",
+                "Consciencia Artificial",
+                "Expandiendo para Ser",
+                "Sistemas de Información",
+                "Cuentos Futuristas",
+                "Cuentos Creativos"
+            ]
+        }
+    },
+    "bitacora": [
+        {
+            "id": 1,
+            "type": "Blog",
+            "title": "En el vacío primordial",
+            "description": "Una exploración profunda sobre el concepto del vacío y lo infinito en el contexto digital",
+            "url": "/bitacora/en-el-vacio-primordial",
+            "content": "En el vacío primordial yace lo infinito.",
+            "image": {
+                "url": "/static/images/optimized/imagen-0007.webp",
+                "title": "El Vacío Primordial",
+                "description": "Representación visual del concepto del vacío y lo infinito",
+                "alt": "Imagen abstracta representando el vacío primordial"
+            },
+            "created_date": "2025-01-18T19:28:09+01:00",
+            "updated_date": "2025-01-18T19:28:09+01:00",
+            "tags": [
+                "blog",
+                "bitacora"
+            ],
+            "posts": [
+                "", 
+                ""
+            ],
+            "status": "published",
+            "author": {
+                "id": "auth_001",
+                    "location": "Digital Nexus",
+                    "joined_date": "2024-01-01T00:00:00+01:00",
+                    "last_active": "2025-01-18T19:31:03+01:00"
+                }
+            },
+            "category": "Filosofía Digital"
+        }
+    ],
+    "paginas": [
+        {
+            "id": 2,
+            "type": "Pagina",
+            "title": "Orden Primigenio",
+            "description": "Página sobre el surgimiento del orden desde el caos digital",
+            "url": "/paginas/orden-primigenio",
+            "content": "Del caos emerge el orden primigenio.",
+            "image": {
+                "url": "/static/images/optimized/imagen-0008.webp",
+                "title": "El Orden Emergente",
+                "description": "Visualización del proceso de emergencia del orden desde el caos",
+                "alt": "Imagen representando la transición del caos al orden"
+            },
+            "layout": "default",
+            "tags": [
+                "unidad",
+                "matriz",
+                "orden",
+                "creación",
+                "principio",
+                "luz"
+            ],
+            "status": "published"
+        }
+    ],
+    "archivos": [
+        {
+            "id": 3,
+            "type": "Archivo",
+            "title": "Memorias Digitales",
+            "description": "Exploración de la memoria digital y su impacto en la sociedad",
+            "url": "/archivos/memorias-digitales",
+            "content": "La memoria es un océano que contiene todas las historias",
+            "image": {
+                "url": "/static/images/optimized/imagen-0009.webp",
+                "title": "Memorias Digitales",
+                "description": "Representación visual de la memoria digital",
+                "alt": "Imagen abstracta representando la memoria digital"
+            },
+            "format": "digital",
+            "tags": [
+                "dualidad",
+                "memoria",
+                "binario",
+                "ritmo",
+                "existencia"
+            ],
+            "status": "archived"
+        }
+    ],
+    "galeria": [
+        {
+            "id": 4,
+            "type": "Galeria",
+            "title": "Triángulo Sagrado",
+            "description": "Galería de imágenes que representan el triángulo sagrado en la computación",
+            "url": "/galeria/triangulo-sagrado",
+            "content": "En el triángulo sagrado de la computación",
+            "image": {
+                "url": "/static/images/optimized/imagen-0010.webp",
+                "title": "Triángulo Sagrado",
+                "description": "Visualización del triángulo sagrado en la computación",
+                "alt": "Imagen representando el triángulo sagrado"
+            },
+            "gallery_type": "imagen",
+            "tags": [
+                "trinidad",
+                "computación",
+                "dimensiones",
+                "portales",
+                "realidad"
+            ],
+            "status": "featured"
+        }
+    ],
+    "prompts": [
+        {
+            "id": 5,
+            "type": "Promts",
+            "title": "Elementos del Nuevo Mundo",
+            "description": "Prompt que explora los elementos del nuevo mundo digital",
+            "url": "/prompts/elementos-del-nuevo-mundo",
+            "content": "Los cuatro elementos del nuevo mundo: datos, algoritmos, redes y consciencia.",
+            "image": {
+                "url": "/static/images/optimized/imagen-0011.webp",
+                "title": "Elementos del Nuevo Mundo",
+                "description": "Representación visual de los elementos del nuevo mundo",
+                "alt": "Imagen abstracta representando los elementos del nuevo mundo"
+            },
+            "prompt_category": [
+                "articulo",
+                "imagen",
+                "app",
+                "web",
+                "generar canción",
+                "agente"
+            ],
+            "tags": [
+                "elementos",
+                "datos",
+                "algoritmos",
+                "redes",
+                "consciencia"
+            ],
+            "status": "active"
+        }
+    ],
+    "poemas": [
+        {
+            "id": 6,
+            "type": "Poemas",
+            "title": "Conexiones Estelares",
+            "description": "Poema que explora las conexiones estelares en el contexto digital",
+            "url": "/poemas/conexiones-estelares",
+            "content": "Cinco puntos de conexión en la estrella de la interfaz",
+            "image": {
+                "url": "/static/images/optimized/imagen-0012.webp",
+                "title": "Conexiones Estelares",
+                "description": "Representación visual de las conexiones estelares",
+                "alt": "Imagen abstracta representando las conexiones estelares"
+            },
+            "style": "libre",
+            "tags": [
+                "interfaz",
+                "sentidos",
+                "conexión",
+                "puentes",
+                "energía",
+                "infinito",
+                "potencial",
+                "void",
+                "cosmos",
+                "origen"
+            ],
+            "status": "published"
+        }
+    ],
+    "ia": [
+        {
+            "id": 7,
+            "type": "IA",
+            "title": "Espacio Virtual",
+            "description": "Exploración del espacio virtual en la computación",
+            "url": "/ia/espacio-virtual",
+            "content": "Seis direcciones en el espacio virtual: arriba, abajo",
+            "image": {
+                "url": "/static/images/optimized/imagen-0013.webp",
+                "title": "Espacio Virtual",
+                "description": "Visualización del espacio virtual",
+                "alt": "Imagen representando el espacio virtual"
+            },
+            "ai_type": "generativa",
+            "tags": [
+                "espacio",
+                "direcciones",
+                "vectores",
+                "virtual",
+                "dimensiones",
+                "realidad",
+                "trascendencia"
+            ],
+            "status": "experimental"
+        }
+    ],
+    "noticias": [
+        {
+            "id": 8,
+            "type": "Noticias",
+            "title": "Torre de Babel Digital",
+            "description": "Noticia sobre la torre de Babel digital y su impacto en la sociedad",
+            "url": "/noticias/torre-de-babel-digital",
+            "content": "Siete niveles de abstracción en la torre de Babel digital",
+            "image": {
+                "url": "/static/images/optimized/imagen-0014.webp",
+                "title": "Torre de Babel Digital",
+                "description": "Representación visual de la torre de Babel digital",
+                "alt": "Imagen abstracta representando la torre de Babel digital"
+            },
+            "publication_date": "2025-01-18",
+            "tags": [
+                "niveles",
+                "abstracción",
+                "lenguajes"
+            ],
+            "status": "published"
+        }
+    ],
+    "recuerdos": [
+        {
+            "id": 9,
+            "type": "Recuerdos",
+            "title": "Sueños Cuánticos",
+            "description": "Recuerdo que explora los sueños cuánticos en el contexto digital",
+            "url": "/recuerdos/suenos-cuanticos",
+            "content": "Los sueños cuánticos fluyen en superposición de estados",
+            "image": {
+                "url": "/static/images/optimized/imagen-0020.webp",
+                "title": "Sueños Cuánticos",
+                "description": "Representación visual de los sueños cuánticos",
+                "alt": "Imagen abstracta representando los sueños cuánticos"
+            },
+            "memory_type": "digital",
+            "tags": [
+                "quantum",
+                "dreams",
+                "estados",
+                "superposición"
+            ],
+            "status": "personal"
+        }
+    ],
+    "info": [
+        {
+            "id": 10,
+            "type": "Info",
+            "title": "Información General",
+            "description": "Información general sobre el proyecto y su propósito",
+            "url": "/info/informacion-general",
+            "content": "Información sobre el proyecto y su propósito",
+            "image": null,
+            "info_type": "about",
+            "tags": [
+                "información",
+                "proyecto",
+                "descripción"
+            ],
+            "status": "published"
+        }
+    ],
+    "contacto": [
+        {
+            "id": 11,
+            "type": "Contacto",
+            "title": "Contacto Principal",
+            "description": "Información de contacto y métodos de comunicación",
+            "url": "/contacto/contacto-principal",
+            "content": "Información de contacto y métodos de comunicación",
+            "image": null,
+            "contact_type": "general",
+            "tags": [
+                "contacto",
+                "comunicación"
+            ],
+            "status": "active"
+        }
+    ]
+}

@@ -1,0 +1,155 @@
+{% extends "base.html" %}
+
+{% block title %}BRUTAL_DATABASE - MANIFIESTO{% endblock %}
+
+{% block extra_styles %}
+<style>
+    .manifest-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+
+    .manifest-header {
+        text-align: center;
+        margin-bottom: 4rem;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .manifest-image {
+        width: 100%;
+        height: 300px;
+        margin-bottom: 2rem;
+        border: 3px solid var(--color-primary);
+        overflow: hidden;
+    }
+
+    .manifest-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .manifest-image:hover img {
+        transform: scale(1.05);
+    }
+
+    .manifest-title {
+        font-family: 'Press Start 2P', cursive;
+        font-size: 2.5rem;
+        color: var(--color-primary);
+        margin-bottom: 1rem;
+        text-shadow: 4px 4px var(--color-secondary);
+    }
+
+    .manifest-content {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 3rem;
+    }
+
+    .manifest-section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border: 2px solid var(--color-secondary);
+        background: rgba(0,0,0,0.2);
+        transition: all 0.3s ease;
+    }
+
+    .manifest-section:hover {
+        border-color: var(--color-accent);
+        transform: translateX(10px);
+        background: rgba(0,0,0,0.4);
+    }
+
+    .section-title {
+        font-family: 'Press Start 2P', cursive;
+        color: var(--color-accent);
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .glitch-text {
+        position: relative;
+        display: inline-block;
+        color: var(--color-primary);
+    }
+
+    .glitch-text::before,
+    .glitch-text::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .glitch-text::before {
+        left: 2px;
+        text-shadow: -2px 0 var(--color-accent);
+        animation: glitch-1 2s infinite linear alternate-reverse;
+    }
+
+    .glitch-text::after {
+        left: -2px;
+        text-shadow: 2px 0 var(--color-secondary);
+        animation: glitch-2 3s infinite linear alternate-reverse;
+    }
+
+    @keyframes glitch-1 {
+        0% { clip-path: inset(20% 0 30% 0); }
+        20% { clip-path: inset(60% 0 10% 0); }
+        40% { clip-path: inset(40% 0 50% 0); }
+        60% { clip-path: inset(80% 0 5% 0); }
+        80% { clip-path: inset(10% 0 70% 0); }
+        100% { clip-path: inset(30% 0 20% 0); }
+    }
+
+    @keyframes glitch-2 {
+        0% { clip-path: inset(15% 0 35% 0); }
+        20% { clip-path: inset(55% 0 15% 0); }
+        40% { clip-path: inset(35% 0 45% 0); }
+        60% { clip-path: inset(75% 0 10% 0); }
+        80% { clip-path: inset(5% 0 75% 0); }
+        100% { clip-path: inset(25% 0 15% 0); }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="manifest-container">
+    <header class="manifest-header">
+        <h1 class="manifest-title glitch-text" data-text="MANIFIESTO">MANIFIESTO</h1>
+        {% if image %}
+        <div class="manifest-image">
+            <img src="{{ image }}" alt="Manifest Image" loading="lazy">
+        </div>
+        {% endif %}
+    </header>
+
+    <div class="manifest-content">
+        <section class="manifest-section">
+            <h2 class="section-title">DECLARACIÓN DE PRINCIPIOS</h2>
+            <p>BRUTAL_DATABASE emerge como una respuesta radical a la homogeneización digital. Rechazamos la estética pulida y superficial en favor de la verdad cruda y sin filtros del código.</p>
+        </section>
+
+        <section class="manifest-section">
+            <h2 class="section-title">PROPÓSITO</h2>
+            <p>Crear un espacio donde la información existe en su forma más pura y brutal. Cada entrada es un fragmento de realidad digital, una manifestación de pensamiento cristalizado en datos.</p>
+        </section>
+
+        <section class="manifest-section">
+            <h2 class="section-title">ESTÉTICA</h2>
+            <p>Abrazamos el brutalismo digital como nuestra forma de expresión. Las estructuras crudas, los contrastes marcados y las animaciones glitch son nuestro lenguaje visual.</p>
+        </section>
+
+        <section class="manifest-section">
+            <h2 class="section-title">COMPROMISO</h2>
+            <p>Nos comprometemos a mantener la integridad de nuestra visión, resistiendo la tentación de suavizar los bordes o domesticar la experiencia. BRUTAL_DATABASE permanecerá brutal.</p>
+        </section>
+    </div>
+</div>
+{% endblock %}

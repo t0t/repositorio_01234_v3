@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}BRUTAL_DATABASE{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #ff6b6b;
+            --color-secondary: #4ecdc4;
+            --color-accent: #ffe66d;
+            --color-dark: #2c2c2c;
+            --glitch-duration: 0.5s;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background-color: var(--color-dark);
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .glitch {
+            position: relative;
+            animation: glitch var(--glitch-duration) infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+
+        .brutal-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 4px solid var(--color-primary);
+        }
+
+        .brutal-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--color-dark);
+            padding: 1rem;
+            border-bottom: 4px solid var(--color-accent);
+            z-index: 1000;
+        }
+
+        .brutal-nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .brutal-nav a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .brutal-nav a:hover {
+            color: var(--color-primary);
+            text-shadow: 3px 3px var(--color-secondary);
+        }
+
+        .content {
+            margin-top: 80px;
+        }
+
+        {% block extra_styles %}{% endblock %}
+    </style>
+</head>
+<body>
+    <nav class="brutal-nav">
+        <ul>
+            <li><a href="/" class="glitch">HOME</a></li>
+            <li><a href="/archive" class="glitch">ARCHIVE</a></li>
+            <li><a href="/void" class="glitch">VOID</a></li>
+            <li><a href="/about" class="glitch">ABOUT</a></li>
+            <li><a href="/contact" class="glitch">CONTACT</a></li>
+            <li><a href="/manifest" class="glitch">MANIFEST</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    {% block scripts %}{% endblock %}
+</body>
+</html>
